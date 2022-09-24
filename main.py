@@ -1,4 +1,5 @@
 from iterator import FlatIterator
+from Generator import unpackage
 
 nested_list = [
 	['a', 'b', 'c'],
@@ -8,18 +9,8 @@ nested_list = [
 	2
 ]
 
-def unpackage(some_list: list):
-    counter = 0
-    while counter < len(some_list):
-        if isinstance(some_list[counter], list):
-            for elements in some_list[counter]:
-                yield elements
-        else:
-            yield some_list[counter]
-        # yield some_list[counter]
-        counter += 1
 
-flat_generator = unpackage(nested_list)
-
-for item in flat_generator:
-    print(item)
+if __name__ == '__main__':
+    flat_generator = unpackage(nested_list)
+    for item in flat_generator:
+        print(item)
