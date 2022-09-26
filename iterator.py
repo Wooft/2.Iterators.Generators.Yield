@@ -1,16 +1,8 @@
+from Generator import unpackage
+
 class FlatIterator():
     def __init__(self, some_list: list):
         self.list = []
-        def unpackage(some_list: list):
-            counter = 0
-            while counter < len(some_list):
-                if isinstance(some_list[counter], list):
-                    mylist = unpackage(some_list[counter])
-                    for elements in mylist:
-                        yield elements
-                else:
-                    yield some_list[counter]
-                counter += 1
         flat_list = unpackage(some_list)
         for items in flat_list:
             self.list.append(items)
