@@ -4,7 +4,8 @@ from Generator import unpackage
 nested_list = [
 	['a', 'b', 'c'],
 	['d', 'e', 'f', 'h', False],
-	[1, 2, None]
+	[1, 2, None],
+	[[1, 4, 7], [1, 2, 4]]
 ]
 
 
